@@ -73,6 +73,8 @@ function colocarCartas() {
     const cartaFrente = carta.querySelector("div:nth-child(1)");
     const cartaTras = carta.querySelector("div:nth-child(2)");
     contador++; //para cada clique, o contador soma 1
+    const contadorHTML = document.querySelector(".jogadas p");
+    contadorHTML.innerHTML = contador;
     compararCartas.push(carta); //aplica esta carta especifica na array que compara as cartas 
     //posteriormente
 
@@ -130,7 +132,7 @@ function colocarCartas() {
         //firstcard e secondcard
         firstCard = undefined;
         secondCard = undefined;
-        encerrarJogo();
+        setTimeout(encerrarJogo, 350);
  }
 
  function encerrarJogo() {
@@ -150,6 +152,8 @@ function colocarCartas() {
 
  function relogio() {
     contadorRelogio++;
+    const relogioHTML = document.querySelector(".relogio p");
+    relogioHTML.innerHTML = contadorRelogio;
  }
 
 // Para impedir bugs de clicar rapidamente, as funções desativam o atributo onclick das cartas

@@ -7,10 +7,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.escondido {
-    display: none;
-}
-
 h1 {
     font-size: 56px;
     font-style: normal;
@@ -21,6 +17,26 @@ h1 {
     padding-top: 40px;
     padding-bottom: 47px;
     color: #75B79E;
+}
+
+.icones {
+    display: flex;
+    justify-content: space-evenly;
+    width: 75px;
+    margin: auto;
+    border: 1px solid rgba(0,0,0,.3);
+    background: #75B79E;
+    border-radius: 8px;
+}
+
+.icones ion-icon {
+    color: white;
+    font-size: 30px;
+}
+
+.icones p {
+    color: white;
+    font-size: 30px;
 }
 
 .carta {
@@ -43,7 +59,7 @@ h1 {
 
     border-radius: 10px;
     box-shadow: 0px 0px 1px rgba(0,0,0,.3);
-    
+
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transition: all 500ms;
