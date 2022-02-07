@@ -20,7 +20,7 @@ function comecarJogo() {
     let condicao = 0;
 
     while(condicao === 0) {
-        if (qtdCartas < 4 || qtdCartas > 14 || (qtdCartas % 2) === 1) {
+        if (qtdCartas < 4 || qtdCartas > 14 || (qtdCartas % 2) === 1 || qtdCartas === null) {
         qtdCartas = parseInt(prompt("Com quantas cartas você quer jogar? (números pares de 4 a 14)"));
         condicao = 0;
         } else {
@@ -42,6 +42,13 @@ function embaralhador() {
 //colocando as cartas dinamicamente no HTML:
 function colocarCartas() {
     const main = document.querySelector("main");
+    const escondido = document.querySelectorAll(".escondido");
+
+    // mostra os icones de contagem no layout
+    for (let i = 0; i < escondido.length; i++) {
+        escondido[i].classList.remove("escondido");
+    }
+
     let gifsEmbaralhados = gifs.sort(embaralhador); //embaralha pela primeira vez
 
     // coloca dois pares iguais da array de gifs embaralhada
@@ -83,7 +90,7 @@ function colocarCartas() {
     cartaTras.classList.toggle("virar");
 
     desativarSelecao();
-    setTimeout(ativarSelecao, 1000);
+    setTimeout(ativarSelecao, 500);
     // se houver mais de uma carta escolhida, a função desvirarCartas é ativada, caso contrário nada 
     //acontece
     if (compararCartas.length > 1) {
@@ -142,8 +149,8 @@ function colocarCartas() {
         alert(`Você ganhou em ${contador} jogadas e ${contadorRelogio} segundos`);
         const reiniciar = (prompt("Quer jogar novamente?")).toUpperCase();
         
-        if (reiniciar === "SIM" || reiniciar === "S") {
-            alert("Então vai ter que atualizar a página, pq eu não implementei o reinicio")
+        if (reiniciar === "SIM" || reiniciar === "S" || reiniciar === "QUERO") {
+            window.location.reload();
         } else {
             alert("vc quem sabe")
         }

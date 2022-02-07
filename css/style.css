@@ -19,6 +19,10 @@ h1 {
     color: #75B79E;
 }
 
+.escondido {
+    display: none;
+}
+
 .icones {
     display: flex;
     justify-content: space-evenly;
